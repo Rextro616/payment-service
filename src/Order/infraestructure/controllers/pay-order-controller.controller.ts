@@ -6,9 +6,8 @@ export class PayOrderController {
 
   async run(req: Request, res: Response) {
     try {
-      console.log("req.body")
-      console.log(req.body);
-      const result = await this.payOrder.run(req.body);
+      const{ body : orderReq} = req.body;
+      const result = await this.payOrder.run(orderReq);
       console.log(result);
       res.status(200).send(result);
     } catch (error) {

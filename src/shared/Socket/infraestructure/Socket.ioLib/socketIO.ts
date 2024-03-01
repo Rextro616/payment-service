@@ -10,7 +10,6 @@ export class SocketIO implements SocketRepository {
       return new Promise<Socket>((resolve, reject) => {
         try {
           const socket = io(config.SocketIO.url);
-          console.log(socket);
           resolve(socket);
         } catch (err: any) {
           reject(err);
